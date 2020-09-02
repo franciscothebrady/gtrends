@@ -6,7 +6,6 @@ library(readr)
 library(purrr)
 #Seattle code geo = c("US-WA-819")
 #Set proxy to be able to start download
-setHandleParameters(user= NULL, password= NULL, domain= NULL, proxyhost = 'wwwproxy.frb.gov', proxyport = 8080)
 
 
 search_terms <-
@@ -118,7 +117,7 @@ tm <- trendlist$forbearance %>%
   # determine scaling factor to rebase levels to Jan 1 = 100 
   scale <- 100 / tm$hits[1]
 tm %>% 
-  mutate(levels_rebased = levels * scale) %>% write_csv("/href/prod/mortgage/gtrends/data/new_forbearance_2019.csv")
+  mutate(levels_rebased = levels * scale) %>% write_csv("new_forbearance_2019.csv")
 
 # homes for sale 
 tm <- trendlist$homes_for_sale %>% 
@@ -137,7 +136,7 @@ tm <- trendlist$homes_for_sale %>%
   # determine scaling factor to rebase levels to Jan 1 = 100 
   scale <- 100 / tm$hits[1]
 tm %>% 
-  mutate(levels_rebased = levels * scale) %>% write_csv("/href/prod/mortgage/gtrends/data/new_homes_for_sale_2019.csv")
+  mutate(levels_rebased = levels * scale) %>% write_csv("new_homes_for_sale_2019.csv")
 
 # mortgage help
 tm <- trendlist$mortgage_help %>% 
@@ -156,7 +155,7 @@ tm <- trendlist$mortgage_help %>%
 # determine scaling factor to rebase levels to Jan 1 = 100 
 scale <- 100 / tm$hits[1]
 tm %>% 
-  mutate(levels_rebased = levels * scale) %>% write_csv("/href/prod/mortgage/gtrends/data/new_mortgage_help_2019.csv")
+  mutate(levels_rebased = levels * scale) %>% write_csv("new_mortgage_help_2019.csv")
 
 # open houses
 tm <- trendlist$open_houses %>% 
@@ -176,7 +175,7 @@ tm <- trendlist$open_houses %>%
 scale <- 100 / tm$hits[1]
 tm %>% 
   mutate(levels_rebased = levels * scale) %>%
-  write_csv("/href/prod/mortgage/gtrends/data/new_open_houses_2019.csv")
+  write_csv("new_open_houses_2019.csv")
 
 # realtor
 tm <- trendlist$realtor %>% 
@@ -196,7 +195,7 @@ tm <- trendlist$realtor %>%
 scale <- 100 / tm$hits[1]
 tm %>% 
   mutate(levels_rebased = levels * scale) %>%
-  write_csv("/href/prod/mortgage/gtrends/data/new_realtor_2019.csv")
+  write_csv("new_realtor_2019.csv")
 
 # refinance
 tm <- trendlist$refinance %>% 
@@ -216,7 +215,7 @@ tm <- trendlist$refinance %>%
 scale <- 100 / tm$hits[1]
 tm %>% 
   mutate(levels_rebased = levels * scale) %>%
-  write_csv("/href/prod/mortgage/gtrends/data/new_refinance_2019.csv")
+  write_csv("new_refinance_2019.csv")
 
 # zillow
 tm <- trendlist$zillow %>% 
@@ -236,7 +235,7 @@ tm <- trendlist$zillow %>%
 scale <- 100 / tm$hits[1]
 tm %>% 
   mutate(levels_rebased = levels * scale) %>%
-  write_csv("/href/prod/mortgage/gtrends/data/new_zillow_2019.csv")
+  write_csv("new_zillow_2019.csv")
 
 # 2020 ---- 
 # forbearance
@@ -257,7 +256,7 @@ tm <- trendlist$forbearance %>%
 scale <- 100 / tm$hits[1]
 tm %>% 
   mutate(levels_rebased = levels * scale) %>%
-  write_csv("/href/prod/mortgage/gtrends/data/new_forbearance_2020.csv")
+  write_csv("new_forbearance_2020.csv")
 
 # homes for sale 
 tm <- trendlist$homes_for_sale %>% 
@@ -277,7 +276,7 @@ tm <- trendlist$homes_for_sale %>%
 scale <- 100 / tm$hits[1]
 tm %>% 
   mutate(levels_rebased = levels * scale) %>%
-  write_csv("/href/prod/mortgage/gtrends/data/new_homes_for_sale_2020.csv")
+  write_csv("new_homes_for_sale_2020.csv")
 
 # mortgage help
 tm <- trendlist$mortgage_help %>% 
@@ -297,7 +296,7 @@ tm <- trendlist$mortgage_help %>%
 scale <- 100 / tm$hits[1]
 tm %>% 
   mutate(levels_rebased = levels * scale) %>%
-  write_csv("/href/prod/mortgage/gtrends/data/new_mortgage_help_2020.csv")
+  write_csv("new_mortgage_help_2020.csv")
 
 # open houses
 tm <- trendlist$open_houses %>% 
@@ -317,7 +316,7 @@ tm <- trendlist$open_houses %>%
 scale <- 100 / tm$hits[1]
 tm %>% 
   mutate(levels_rebased = levels * scale) %>%
-  write_csv("/href/prod/mortgage/gtrends/data/new_open_houses_2020.csv")
+  write_csv("new_open_houses_2020.csv")
 
 # realtor
 tm <- trendlist$realtor %>% 
@@ -337,7 +336,7 @@ tm <- trendlist$realtor %>%
 scale <- 100 / tm$hits[1]
 tm %>% 
   mutate(levels_rebased = levels * scale) %>%
-  write_csv("/href/prod/mortgage/gtrends/data/new_realtor_2020.csv")
+  write_csv("new_realtor_2020.csv")
 
 # refinance
 tm <- trendlist$refinance %>% 
@@ -357,7 +356,7 @@ tm <- trendlist$refinance %>%
 scale <- 100 / tm$hits[1]
 tm %>% 
   mutate(levels_rebased = levels * scale) %>%
-  write_csv("/href/prod/mortgage/gtrends/data/new_refinance_2020.csv")
+  write_csv("new_refinance_2020.csv")
 
 # zillow
 tm <- trendlist$zillow %>% 
@@ -377,6 +376,6 @@ tm <- trendlist$zillow %>%
 scale <- 100 / tm$hits[1]
 tm %>% 
   mutate(levels_rebased = levels * scale) %>%
-  write_csv("/href/prod/mortgage/gtrends/data/new_zillow_2020.csv")
+  write_csv("new_zillow_2020.csv")
 
 
